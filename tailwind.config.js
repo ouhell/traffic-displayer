@@ -15,7 +15,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
+        border: {
+          DEFAULT: 'hsl(var(--border))',
+          inverse: 'hsl(var(--border-inverse))',
+        },
+
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
@@ -38,7 +42,10 @@ module.exports = {
         },
         accent: {
           DEFAULT: 'hsl(var(--accent))',
+          invert: 'hsl(var(--accent-invert))',
+
           foreground: 'hsl(var(--accent-foreground))',
+          'foreground-invert': 'hsl(var(--accent-foreground-invert))',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
