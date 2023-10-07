@@ -1,15 +1,29 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { PickingItem } from 'renderer/assets/pickingitemsTypes';
-import { Button } from 'renderer/components/ui/button';
+
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from 'renderer/components/ui/tooltip';
+import { useItemSelection } from '../../../../context/PickingItems';
 
-function Item({ name, src: Comp }: PickingItem) {
+function Item({ name, src: Comp, comp, props }: PickingItem) {
+  const { selectItem } = useItemSelection();
   return (
-    <div className="hover:bg-accent/10 rounded-sm p-1 cursor-pointer">
+    <div
+      className="hover:bg-accent/10 rounded-sm p-1 cursor-pointer"
+      onMouseDown={() => {
+        selectItem({
+          name,
+          src: Comp,
+          comp,
+          props,
+        });
+      }}
+    >
       <Tooltip>
         <TooltipTrigger asChild>
           <div>

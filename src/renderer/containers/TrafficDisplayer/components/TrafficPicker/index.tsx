@@ -12,6 +12,7 @@ import { TooltipProvider } from 'renderer/components/ui/tooltip';
 import { PickingItemGroup } from 'renderer/assets/pickingitemsTypes';
 import { PickingItemsData } from 'renderer/assets/pickingitems';
 import Group from './components/Group';
+import { useItemSelection } from './context/PickingItems';
 
 type Props = {
   open: boolean;
@@ -20,9 +21,11 @@ type Props = {
 const groups: PickingItemGroup[] = PickingItemsData;
 
 function TrafficPicker({ open }: Props) {
+  const { clearSelectedItem } = useItemSelection();
   return (
     <m.nav
-      className="w-[20rem] h-full fixed top-0 left-0 bg-primary flex flex-col text-popover  "
+      onMouseUp={clearSelectedItem}
+      className="w-[20rem] h-full fixed top-0 left-0 bg-primary flex flex-col text-popover  z-40"
       animate={{
         x: open ? '0' : '-100%',
         opacity: open ? 1 : 0.1,
