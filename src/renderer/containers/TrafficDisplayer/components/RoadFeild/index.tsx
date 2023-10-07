@@ -74,7 +74,7 @@ function RoadField({
       {displayedItems.map((ditem) => {
         return (
           <div
-            className="absolute translate-x-[-50%] translate-y-[-50%]"
+            className="absolute translate-x-[-50%] translate-y-[-50%] cursor-pointer"
             style={{
               top: ditem.position.y,
               left: ditem.position.x,

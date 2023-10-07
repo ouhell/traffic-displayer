@@ -1,8 +1,6 @@
 import React from 'react';
 
-type Props = {};
-
-function Draggable(props: Props) {
+function Draggable() {
   return <div>Draggable</div>;
 }
 
