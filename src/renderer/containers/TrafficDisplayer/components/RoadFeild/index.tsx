@@ -85,7 +85,12 @@ function RoadField({
               removeDisplayedItem(ditem.id);
             }}
           >
-            {ditem.item.name}
+            <ditem.item.src
+              key={ditem.id}
+              height={ditem.item.props?.dimensions?.height ?? 80}
+              width={ditem.item.props?.dimensions?.width ?? 80}
+            />
+            {/* {ditem.item.name} */}
           </div>
         );
       })}
