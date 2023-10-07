@@ -55,9 +55,9 @@ const configuration: webpack.Configuration = {
         include: /\.module\.s?(c|a)ss$/,
       },
       {
-        test: /\.s?css$/,
+        test: /\.s?(a|c)ss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
           {
@@ -71,11 +71,11 @@ const configuration: webpack.Configuration = {
         ],
         exclude: /\.module\.s?(c|a)ss$/,
       },
-      {
-        test: /\.s?(a|c)ss$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
-        exclude: /\.module\.s?(c|a)ss$/,
-      },
+      // {
+      //   test: /\.s?(a|c)ss$/,
+      //   use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+      //   exclude: /\.module\.s?(c|a)ss$/,
+      // },
       // Fonts
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,

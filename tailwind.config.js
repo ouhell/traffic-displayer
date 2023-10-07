@@ -1,5 +1,6 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
 const tailwindanimate = require('tailwindcss-animate');
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -15,6 +16,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        sky: colors.sky,
+        cyan: colors.cyan,
         border: {
           DEFAULT: 'hsl(var(--border))',
           inverse: 'hsl(var(--border-inverse))',
@@ -79,6 +82,9 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
     },
+  },
+  variants: {
+    extend: {},
   },
   plugins: [tailwindanimate],
 };
